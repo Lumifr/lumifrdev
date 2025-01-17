@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="styles.css"
+    <meta charset="uTf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+</head>
+<body>
+    <button class="toggle-theme" onclick="toggleTheme()">☀️</button>
+    <div class="container" id="main-container">
+        <h1 class="index-page" onclick="showMainPage()">Lumi Athena</h1>
+        <ul class="menu" id="menu-bar">
+            <li><a id="about-link" href="#about" onclick="showAbout()">About</a></li>
+            <li><a id="research-link" href="#research" onclick="showResearch()">Research</a></li>
+            <li><a id="project-link" href="#projects" onclick="showProjects()">Projects</a></li>
+            <li><a id="cv-link" href="#cv" onclick="showCV()">CV</a></li>
+            <li><a id="contact-link" href="#contact" onclick="showContact()">Contact</a></li>
+        </ul>
+    </div>
+    <div class="sub-section" id="about-section">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm Lumi, I'm a Former New Orleans EMS Sprint LT.Paramedic, and a current Advanced Care Clinican with London Ambulance Service (NHS), When I got into coding I started with JavaScript, and thought that was all I was going to do well, I now know HTML, JavaScript, CSS, C#, Python, React, C++, and so much more.
+        </p>
+    </div>
+
+    <div class="sub-section" id="research-section">
+        <h2>Research</h2>
+        <p>
+            This is the Research section content. Add details about your research projects, papers, and academic achievements here.
+        </p>
+    </div>
+
+    <div class="sub-section" id="projects-section">
+        <h2>Projects</h2>
+        <p>
+           CatPhotoApp (From when i started out with HTML coding)
+        </p>
+<img src="images/cat app.jpeg">
+<p> CSS Flexbox Photo gallery (Was like the second flexbox thing I did)</p>
+<img src="images/css flex.jpeg">
+    </div>
+
+    <div class="sub-section" id="cv-section">
+        <h2>CV</h2>
+        <p>
+            Expeirences
+        </p>
+      <p>London Ambulance Service (NHS) as a Advanced Care Clinincan</p>
+      <p>Creative Interactive</p>
+<p>Custom 3D modeling, Javascript Scripts, Website development, Front end, and Backend Development.
+      <p>Skills</p>
+      <p>JavaScript, HTML, CSS, C#, C++, Python, Lua, Dart, Stencil, and React </p>
+      <p>Volunteer Work</p>
+<p>New Orleans EMS LT.Srpint Paramedic 
+    </div>
+
+    <div class="sub-section" id="contact-section">
+        <h2>Contact</h2>
+        <p>
+           Email: lumifrx@gmail.com
+        </p>
+    </div>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.toggle-theme');
+            const aboutSection = document.querySelector('.about-section');
+
+            button.classList.add('spin');
+            setTimeout(() => button.classList.remove('spin'), 500);
+
+            const isDarkMode = body.style.backgroundColor === 'black';
+
+            body.style.backgroundColor = isDarkMode ? 'white' : 'black';
+            body.style.color = isDarkMode ? 'black' : 'white';
+            button.textContent = isDarkMode ? '🌙' : '☀️';
+        }
+
+        function showAbout() {
+            const container = document.getElementById('main-container');
+            const aboutSection = document.getElementById('about-section');
+            const aboutLink = document.getElementById('about-link');
+            const menuBar = document.getElementById('menu-bar');
+
+            // Deactivate all sections and links
+            deactivateSections();
+
+            container.classList.add('shift-up', 'shift-higher');
+            setTimeout(() => menuBar.classList.add('sub-page', 'active'), 200); // Delay activation of the line animation
+            setTimeout(() => {
+                aboutSection.classList.add('active');
+                aboutLink.classList.add('active');
+            }, 100); // Ensure fade-in starts only after upward animation
+        }
+
+        function showResearch() {
+            const container = document.getElementById('main-container');
+            const researchSection = document.getElementById('research-section');
+            const researchLink = document.querySelector('a[href="#research"]');
+            const menuBar = document.getElementById('menu-bar');
+
+            // Deactivate all sections and links
+            deactivateSections();
+
+            container.classList.add('shift-up', 'shift-higher');
+            setTimeout(() => menuBar.classList.add('sub-page', 'active'), 200); // Delay activation of the line animation
+            setTimeout(() => {
+                researchSection.classList.add('active');
+                researchLink.classList.add('active');
+            }, 100); // Ensure fade-in starts only after upward animation
+        }
+
+        function showProjects() {
+            const container = document.getElementById('main-container');
+            const projectsSection = document.getElementById('projects-section');
+            const projectLink = document.querySelector('a[href="#projects"]');
+            const menuBar = document.getElementById('menu-bar');
+
+            // Deactivate all sections and links
+            deactivateSections();
+
+            container.classList.add('shift-up', 'shift-higher');
+            setTimeout(() => menuBar.classList.add('sub-page', 'active'), 200); // Delay activation of the line animation
+            setTimeout(() => {
+                projectsSection.classList.add('active');
+                projectLink.classList.add('active');
+            }, 100); // Ensure fade-in starts only after upward animation
+        }
+
+        function showCV() {
+            const container = document.getElementById('main-container');
+            const cvSection = document.getElementById('cv-section');
+            const cvLink = document.querySelector('a[href="#cv"]');
+            const menuBar = document.getElementById('menu-bar');
+
+            // Deactivate all sections and links
+            deactivateSections();
+
+            container.classList.add('shift-up', 'shift-higher');
+            setTimeout(() => menuBar.classList.add('sub-page', 'active'), 200); // Delay activation of the line animation
+            setTimeout(() => {
+                cvSection.classList.add('active');
+                cvLink.classList.add('active');
+            }, 100); // Ensure fade-in starts only after upward animation
+        }
+
+        function showContact() {
+            const container = document.getElementById('main-container');
+            const contactSection = document.getElementById('contact-section');
+            const contactLink = document.querySelector('a[href="#contact"]');
+            const menuBar = document.getElementById('menu-bar');
+
+            // Deactivate all sections and links
+            deactivateSections();
+
+            container.classList.add('shift-up', 'shift-higher');
+            setTimeout(() => menuBar.classList.add('sub-page', 'active'), 200); // Delay activation of the line animation
+            setTimeout(() => {
+                contactSection.classList.add('active');
+                contactLink.classList.add('active');
+            }, 100); // Ensure fade-in starts only after upward animation
+        }
+
+        // Update the main page reset function to handle both About and Research sections
+        function showMainPage() {
+            const container = document.getElementById('main-container');
+            const menuBar = document.getElementById('menu-bar');
+            const sections = document.querySelectorAll('.sub-section');
+
+            // Reset the UI elements
+            container.classList.remove('shift-up', 'shift-higher');
+            menuBar.classList.remove('sub-page', 'active');
+
+            // Deactivate all sections
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Deactivate all menu links
+            document.querySelectorAll('.menu li a').forEach(link => link.classList.remove('active'));
+
+            // Update the URL to the index page
+            history.pushState(null, null, ' ');
+        }
+
+        // Handle navigation for direct URLs
+        if (window.location.hash === '#about') {
+            showAbout();
+        } else if (window.location.hash === '#research') {
+            showResearch();
+        } else if (window.location.hash === '#projects') {
+            showProjects();
+        } else if (window.location.hash === '#cv') {
+            showCV();
+        } else if (window.location.hash === '#contact') {
+            showContact();
+        }
+
+        function deactivateSections() {
+            const sections = document.querySelectorAll('.sub-section');
+            const links = document.querySelectorAll('.menu li a');
+
+            // Deactivate all sections
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Deactivate all links
+            links.forEach(link => link.classList.remove('active'));
+        }
+
+        document.querySelectorAll('.menu li a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                // Remove active class from all menu items
+                document.querySelectorAll('.menu li a').forEach(item => item.classList.remove('active'));
+
+                // Add active class to the clicked item
+                this.classList.add('active');
+            });
+        });
+        
+        // Ensure light/dark mode toggle works on the first click
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            body.style.backgroundColor = 'black';
+            body.style.color = 'white';
+        });
+    </script>
+</body>
